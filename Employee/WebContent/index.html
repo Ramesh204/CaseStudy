@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="jquery1-7-2.js"></script>
+<script type="text/javascript">
+
+$(function(){
+	$.get("http://localhost:8080/InsuranceAgent/rest/insurance",function(resp){
+		$("#msg").html(resp);
+	});
+});
+</script>
+<meta charset="ISO-8859-1">
+<title>Insurance</title>
+
+</head>
+<body>
+
+<a href="Registration.jsp">Register Here</a>
+
+<a href="login.jsp">Login</a>
+
+<div id="msg"/>
+</body>
+</html>
