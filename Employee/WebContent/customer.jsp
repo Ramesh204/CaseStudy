@@ -24,6 +24,7 @@ $(function(){
 
 <body>
 Hello
+<a href="addCustomer.jsp">Add Customer</a>
 
 <form>
 <label for="carNumber">CarNumber</label>

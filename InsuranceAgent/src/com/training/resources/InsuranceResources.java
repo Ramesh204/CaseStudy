@@ -31,7 +31,7 @@ public class InsuranceResources {
 	@GET
 	@Produces(MediaType.TEXT_PLAIN)
 	public String getMessage(){
-		return "You Had Configured JERSEY Property";
+		return "You Had Configured JERSEY Property in Insurance Resources";
 	}
 	
 //	@POST
