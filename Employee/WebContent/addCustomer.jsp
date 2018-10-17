@@ -14,6 +14,11 @@
 		<input type="text"  name="customerName" id="customerName" />
 		<label for="mobileNumber">mobileNumber</label>
 		<input type="text" name="mobileNumber" id="mobileNumber" />
+		<label for="carNumber">carNumber</label>
+		<input type="text" name="carNumber" id="carNumber" />
+		<label for="carModel">carModel</label>
+		<input type="text" name="carModel" id="carModel" />
+		
 		<input type="submit" value="addCustomer" />
 	</form>
 </body>

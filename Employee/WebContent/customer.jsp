@@ -25,7 +25,9 @@ $(function(){
 <body>
 Hello
 <a href="addCustomer.jsp">Add Customer</a>
-
+<a href="getCustomer.jsp">Customer Details</a>
+<a href="updateCustomer.jsp">UpdateCustomer</a>
+<a href="deleteCustomer.jsp">DeleteCustomer</a>
 <form>
 <label for="carNumber">CarNumber</label>
 <input type="text" name="carNumber" id="carNumber" />
