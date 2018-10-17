@@ -1,4 +1,4 @@
-package com.trianing.utils;
+package com.training.utils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

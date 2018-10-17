@@ -14,7 +14,7 @@ import javax.ws.rs.core.Response;
 import com.training.entity.Car;
 import com.training.entity.Customer;
 import com.training.ifaces.DAO;
-import com.trianing.utils.CustomerDAOImpl;
+import com.training.utils.CustomerDAOImpl;
 
 @Path("customer")
 public class CustomerResources {

@@ -19,7 +19,7 @@ import javax.sql.DataSource;
 
 import com.training.entity.Employee;
 import com.training.ifaces.EmployeeDAO;
-import com.trianing.utils.EmployeeDAOImpl;
+import com.training.utils.EmployeeDAOImpl;
 
 /**
  * Servlet implementation class LoginServlet
