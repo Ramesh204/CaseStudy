@@ -69,6 +69,12 @@ public class InsuranceResources {
 		return Response.status(200).entity(dao.getPoliciesofCar(carNumber)).build();
 	}
 	
+	@GET
+	@Path("policyAmount/{carNumber}/{policyName}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getPolicyAmount(@PathParam("carNumber") String carNumber,@PathParam("policyName") String policyName) throws SQLException{
+		return Response.status(200).entity(dao.getPolicyAmount(carNumber, policyName)).build();
+	}
 	
 
 }

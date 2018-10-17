@@ -12,4 +12,6 @@ public interface InsuranceDAO {
 	public List<Policy> getPoliciesofCar(String carNumber) throws SQLException;
 	
 	public List<Policy> getPolicies() throws SQLException;
+	
+	public long getPolicyAmount(String carNumber,String policyName) throws SQLException;
 }

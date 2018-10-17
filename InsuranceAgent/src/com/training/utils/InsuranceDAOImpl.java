@@ -101,6 +101,22 @@ public class InsuranceDAOImpl implements InsuranceDAO {
 				
 		return policyList;
 	}
+
+	@Override
+	public long getPolicyAmount(String carNumber, String policyName) throws SQLException {
+		
+		long policyAmount=0;
+		sql = "select policyAmount from insuranceram where carNumber=? and policyName=? ";
+		pstmt = con.prepareStatement(sql);
+		pstmt.setString(1, carNumber);
+		pstmt.setString(2, policyName);
+		rs = pstmt.executeQuery();
+		while(rs.next()){
+			policyAmount = rs.getLong("policyAmount");
+		}
+		return policyAmount;
+	}
+	
 	
 	
 }

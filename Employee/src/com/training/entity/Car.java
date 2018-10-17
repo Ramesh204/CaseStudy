@@ -26,6 +26,11 @@ public class Car {
 		this.carModel = carModel;
 	}
 
+	public Car(String carNumber) {
+		super();
+		this.carNumber = carNumber;
+	}
+
 	public Car() {
 		super();
 		

@@ -23,16 +23,20 @@ $(function(){
 
 
 <body>
-Hello
+
 <a href="addCustomer.jsp">Add Customer</a>
 <a href="getCustomer.jsp">Customer Details</a>
 <a href="updateCustomer.jsp">UpdateCustomer</a>
 <a href="deleteCustomer.jsp">DeleteCustomer</a>
+<a href="addService.jsp">Add Service</a>
+
+
 <form>
 <label for="carNumber">CarNumber</label>
 <input type="text" name="carNumber" id="carNumber" />
 <input type="button" value="submit" id="button"/>
 </form>
+
 
 <p id="infm"></p>
 </body>

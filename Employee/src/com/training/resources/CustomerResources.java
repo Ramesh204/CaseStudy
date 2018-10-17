@@ -13,17 +13,20 @@ import javax.ws.rs.core.Response;
 
 import com.training.entity.Car;
 import com.training.entity.Customer;
+import com.training.ifaces.CustomerDAO;
 import com.training.ifaces.DAO;
 import com.training.utils.CustomerDAOImpl;
 
 @Path("customer")
 public class CustomerResources {
 
-	DAO<Customer> custDao;
+	CustomerDAOImpl custDao;
 	
 	public CustomerResources() throws Exception {
 		super();
+		
 		custDao = new CustomerDAOImpl();
+		
 	}
 
 	@GET

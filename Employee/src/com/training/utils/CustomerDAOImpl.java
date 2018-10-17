@@ -12,9 +12,10 @@ import javax.sql.DataSource;
 
 import com.training.entity.Car;
 import com.training.entity.Customer;
+import com.training.ifaces.CustomerDAO;
 import com.training.ifaces.DAO;
 
-public class CustomerDAOImpl implements DAO<Customer> {
+public class CustomerDAOImpl implements DAO<Customer>,CustomerDAO{
 	Connection con;
 	String sql;
 	PreparedStatement pstmt;
@@ -63,7 +64,6 @@ public class CustomerDAOImpl implements DAO<Customer> {
 
 	@Override
 	public Customer getCustomerDetails(long customerId) throws SQLException {
-		
 		sql = "select * from customerram natural join carram where customerId=?";
 		
 		pstmt = con.prepareStatement(sql);
@@ -86,13 +86,14 @@ public class CustomerDAOImpl implements DAO<Customer> {
 		
 		
 		return cust;
+	
 	}
 
 	@Override
 	public int updateCustomerDetails(long customerId, String property, String updateVal) throws SQLException {
-				
+	
 		sql = "update customerram set "+property+"=? where customerId=?";
-				
+		
 		pstmt = con.prepareStatement(sql);
 		
 		pstmt.setString(1, updateVal);
@@ -106,7 +107,6 @@ public class CustomerDAOImpl implements DAO<Customer> {
 
 	@Override
 	public int deleteCustomer(long customerId) throws SQLException {
-		
 		sql = "delete from carram where customerId=?";
 		
 		pstmt = con.prepareStatement(sql);
@@ -128,9 +128,8 @@ public class CustomerDAOImpl implements DAO<Customer> {
 		System.out.println(rowDeleted);
 		
 		return rowDeleted;
-		
-
 	}
+
 	
 	
 
