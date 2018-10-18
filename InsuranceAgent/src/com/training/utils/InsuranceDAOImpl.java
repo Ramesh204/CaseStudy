@@ -11,7 +11,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
-
+import org.apache.log4j.*;
 import org.apache.log4j.Logger;
 
 import com.training.entity.Policy;
@@ -102,6 +102,10 @@ public class InsuranceDAOImpl implements InsuranceDAO {
 			policyList.add(policy);
 			
 		}
+		Logger  log = Logger.getLogger("second");
+		String message = "Policies are requested for carNumber:"+carNumber;
+		log.info(message);
+		
 		pstmt.close();		
 		return policyList;
 	}
@@ -118,6 +122,11 @@ public class InsuranceDAOImpl implements InsuranceDAO {
 		while(rs.next()){
 			policyAmount = rs.getLong("policyAmount");
 		}
+		
+		Logger  log = Logger.getLogger("second");
+		String message = "Insurance is  Requested for carNumber:"+carNumber +"and policyName:"+policyName+".";
+		log.info(message);
+		
 		pstmt.close();
 		
 		return policyAmount;

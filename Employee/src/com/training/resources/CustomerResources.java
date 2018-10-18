@@ -47,10 +47,10 @@ public class CustomerResources {
 		
 	}
 	
-	@POST
-	@Path("details")
+	@GET
+	@Path("details/{customerId}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response getDetails(@FormParam("customerId") long customerId) throws SQLException { 
+	public Response getDetails(@PathParam("customerId") long customerId) throws SQLException { 
 		
 		return Response.status(200).entity(custDao.getCustomerDetails(customerId)).build();
 	}

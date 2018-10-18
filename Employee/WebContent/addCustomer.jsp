@@ -17,7 +17,8 @@ color:blue;
 <title>Insert title here</title>
 <script type="text/javascript" src="jquery1-7-2.js"></script>
 <script type="text/javascript">
-
+	
+	
 </script>
 </head>
 <body>
