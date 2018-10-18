@@ -4,15 +4,30 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 <title>Insert title here</title>
+
+<style type="text/css">
+#logindiv{
+margin-left:25%;
+margin-top:5%;
+}
+</style>
 </head>
 <body>
+<div >
+<%@include file="companyBanner.html" %>
+
+<div class="form-group col-sm-5" id="logindiv">
 <form action="login" method="post">
-	<label for="userName">UserName</label>
-	<input type="text" name="userName" />
-	<label for="passWord">PassWord</label>
-	<input type="text"  name="passWord"/>
-	<input type="submit" value="Login" />
+	<label for="userName" >UserName:</label>
+	<input type="text" name="userName" class="form-control" /><br/>
+	<label for="passWord">PassWord:</label>
+	<input type="text"  name="passWord" class="form-control" /><br/>
+	<input type="submit" value="Login"  class="btn btn-success" />
 </form>
+</div>
+
 </body>
 </html>

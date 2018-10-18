@@ -24,8 +24,17 @@ $(function(){
 		
 		$.get("http://localhost:8080/InsuranceAgent/rest/insurance/policyAmount/"+carNumber+"/"+policyName,function(data){
 			
-			net = grassAmount - data;
-			$('#amount').text(net);
+			var netAmount = 0;
+			if((netAmount = grassAmount - data)>0)
+			{
+				
+				$("#netAmunt").val(netAmount);
+			}else{
+				netAmount =0;
+				
+				$("#netAmunt").val(netAmount);
+				}
+			
 			
 			$('#servdiv').slideUp();
 			
@@ -36,7 +45,7 @@ $(function(){
 				$("#servType").val(policyName);
 				$("#grassAmunt").val(grassAmount);
 				$("#insAmunt").val(data);
-				$("#netAmunt").val(net);
+				
 				
 			});
 			
@@ -78,7 +87,7 @@ $(function(){
 </div>
 
 
-<p id="amount"></p>
+
 
 
 <div id="a1">
