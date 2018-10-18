@@ -36,6 +36,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		rowAdded = 0;
 		
 		rowAdded = pstmt.executeUpdate();
+		pstmt.close();
+		
 		return rowAdded;
 	}
 
@@ -58,13 +60,15 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 			empList.add(emp);
 			
 		}
-		
+		pstmt.close();
 		return empList;
 		
 	
 	}
 
-
+	public void closeConnection() throws SQLException{
+		con.close();
+	}
 
 
 	

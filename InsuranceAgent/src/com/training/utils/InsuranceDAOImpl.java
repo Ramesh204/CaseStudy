@@ -12,6 +12,8 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
+import org.apache.log4j.Logger;
+
 import com.training.entity.Policy;
 import com.training.ifaces.InsuranceDAO;
 
@@ -28,6 +30,7 @@ public class InsuranceDAOImpl implements InsuranceDAO {
 	public InsuranceDAOImpl() throws Exception {
 		super();
 		Context ctx = new InitialContext();
+
 
 		DataSource ds =
 		(DataSource)ctx.lookup("java:/comp/env/jdbc/ds1");
@@ -49,6 +52,7 @@ public class InsuranceDAOImpl implements InsuranceDAO {
 		pstmt.setLong(4, policy.getPolicyAmount());
 		rowAdded = 0;
 		rowAdded = pstmt.executeUpdate();
+		pstmt.close();
 		return rowAdded;
 	}
 
@@ -73,7 +77,7 @@ public class InsuranceDAOImpl implements InsuranceDAO {
 			policyList.add(policy);
 			
 		}
-				
+		pstmt.close();		
 		return policyList;
 	}
 
@@ -98,7 +102,7 @@ public class InsuranceDAOImpl implements InsuranceDAO {
 			policyList.add(policy);
 			
 		}
-				
+		pstmt.close();		
 		return policyList;
 	}
 
@@ -114,9 +118,13 @@ public class InsuranceDAOImpl implements InsuranceDAO {
 		while(rs.next()){
 			policyAmount = rs.getLong("policyAmount");
 		}
+		pstmt.close();
+		
 		return policyAmount;
 	}
 	
 	
-	
+	public void closeConnection() throws SQLException{
+		con.close();
+	}
 }

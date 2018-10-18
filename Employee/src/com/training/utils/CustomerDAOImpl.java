@@ -58,7 +58,7 @@ public class CustomerDAOImpl implements DAO<Customer>,CustomerDAO{
 		rowAdded+=pstmt.executeUpdate();
 		
 		System.out.println(rowAdded);
-		
+		pstmt.close();
 		return rowAdded;
 	}
 
@@ -84,7 +84,7 @@ public class CustomerDAOImpl implements DAO<Customer>,CustomerDAO{
 			 cust = new Customer(customerId, customerName, mobileNumber, car);
 		}
 		
-		
+		pstmt.close();
 		return cust;
 	
 	}
@@ -102,6 +102,7 @@ public class CustomerDAOImpl implements DAO<Customer>,CustomerDAO{
 		rowAdded = 0;
 		
 		rowAdded = pstmt.executeUpdate();
+		pstmt.close();
 		return rowAdded;
 	}
 
@@ -126,12 +127,14 @@ public class CustomerDAOImpl implements DAO<Customer>,CustomerDAO{
 		rowDeleted+=pstmt.executeUpdate();
 		
 		System.out.println(rowDeleted);
-		
+		pstmt.close();
 		return rowDeleted;
 	}
 
 	
-	
+	public void closeConnection() throws SQLException{
+		con.close();
+	}
 
 	
 	

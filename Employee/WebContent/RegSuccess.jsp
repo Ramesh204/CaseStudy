@@ -5,10 +5,30 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
+<style type="text/css">
+a{
+
+font-size:35px;
+align:center;
+}
+h2{
+color:green;
+font-size:30px;
+text-align:center;
+}
+div{
+margin-left:40%;
+}
+</style>
 </head>
 <body>
-<h2>You Registered Successfully</h2>
-<a href="login.jsp">Login</a>
 
+<%@include file="companyBanner.html" %>
+
+<h2>You Registered Successfully</h2>
+
+<div>
+<a href="login.jsp">Login</a>
+</div>
 </body>
 </html>

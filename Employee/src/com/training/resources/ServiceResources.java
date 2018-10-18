@@ -6,8 +6,10 @@ import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import com.training.entity.Car;
 import com.training.entity.Service;
@@ -41,6 +43,13 @@ public class ServiceResources {
 		System.out.println(service.getServiceType());
 		
 		return service.getServiceType()+ "is added to the DB";
+	}
+	
+	@GET
+	@Path("details/{serviceId}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getServices(@PathParam("serviceId") long  serviceId) throws SQLException{
+		return Response.status(200).entity(servDao.getServices(serviceId)).build();
 	}
 	
 }

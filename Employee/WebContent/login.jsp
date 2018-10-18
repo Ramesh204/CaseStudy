@@ -22,9 +22,9 @@ margin-top:5%;
 <div class="form-group col-sm-5" id="logindiv">
 <form action="login" method="post">
 	<label for="userName" >UserName:</label>
-	<input type="text" name="userName" class="form-control" /><br/>
+	<input type="text" name="userName" class="form-control " /><br/>
 	<label for="passWord">PassWord:</label>
-	<input type="text"  name="passWord" class="form-control" /><br/>
+	<input type="text"  name="passWord" class="form-control " /><br/>
 	<input type="submit" value="Login"  class="btn btn-success" />
 </form>
 </div>

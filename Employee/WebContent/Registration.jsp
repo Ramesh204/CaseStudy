@@ -4,19 +4,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<style type="text/css">
+#regdiv{
+margin-left:25%;
+margin-top:5%;
+}
+</style>
 <title>Insert title here</title>
 </head>
 <body>
 
+<%@include file="companyBanner.html" %>
 
-
+<div class="form-group col-sm-5" id="regdiv">
 <form action="addemp" method="post">
+	<label for="employeeName">Employee Name</label>
+	<input type="text"  class="form-control  "/><br/>
 	<label for="userName">UserName</label>
-	<input type="text" name="userName" />
+	<input type="text" name="userName" class="form-control  "/><br/>
 	<label for="passWord">PassWord</label>
-	<input type="text"  name="passWord"/>
-	<input type="submit" value="Register" />
+	<input type="text"  name="passWord" class="form-control  "/><br/>
+	<input type="submit" value="Register" class="btn btn-success" />
 </form>
-<div></div>
+<div>
+
 </body>
 </html>
